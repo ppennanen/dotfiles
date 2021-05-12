@@ -1,0 +1,5 @@
+--glob=!/vendor/
+--glob=!/.git/
+--glob=!/.terraform/
+--pretty
+
