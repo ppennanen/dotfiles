@@ -31,7 +31,6 @@ export PATH=$PATH:$HOME/bin:/:$HOME/.cargo/bin:/usr/local/bin:/usr/local/sbin:$H
 export LPASS_AGENT_TIMEOUT=60
 export RIPGREP_CONFIG_PATH=~/.ripgreprc
 
-
 #============
 # ALIAS
 #============
@@ -43,6 +42,7 @@ alias vi="nvim"
 alias k=kubectl
 alias x=kubectx
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias docker=docker --platform linux/amd64
 
 #============
 # PATH
@@ -51,8 +51,14 @@ alias dotfiles='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/ppennanen/bin/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ppennanen/bin/google-cloud-sdk/path.zsh.inc'; fi
 
+#============
+# COMPLETION
+#============
+
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/ppennanen/bin/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ppennanen/bin/google-cloud-sdk/completion.zsh.inc'; fi
+
+kubectl completion zsh > "${fpath[1]}/_kubectl"
 
 #============
 # PROMPT
