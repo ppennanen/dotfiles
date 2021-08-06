@@ -31,6 +31,19 @@ export PATH=$PATH:$HOME/bin:/:$HOME/.cargo/bin:/usr/local/bin:/usr/local/sbin:$H
 export LPASS_AGENT_TIMEOUT=60
 export RIPGREP_CONFIG_PATH=~/.ripgreprc
 
+# libpq is keg-only, which means it was not symlinked into /opt/homebrew,
+# because conflicts with postgres formula.
+#
+# Add libpq to PATH:
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+
+# For compilers to find libpq you may need to set:
+export LDFLAGS="-L/opt/homebrew/opt/libpq/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/libpq/include"
+
+# For pkg-config to find libpq you may need to set:
+export PKG_CONFIG_PATH="/opt/homebrew/opt/libpq/lib/pkgconfig"
+
 #============
 # ALIAS
 #============
