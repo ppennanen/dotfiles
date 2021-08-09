@@ -30,6 +30,7 @@ export GOPROXY=https://proxy.golang.org
 export PATH=$PATH:$HOME/bin:/:$HOME/.cargo/bin:/usr/local/bin:/usr/local/sbin:$HOME/.npm-global/bin
 export LPASS_AGENT_TIMEOUT=60
 export RIPGREP_CONFIG_PATH=~/.ripgreprc
+export GPG_TTY=$(tty)
 
 # libpq is keg-only, which means it was not symlinked into /opt/homebrew,
 # because conflicts with postgres formula.
