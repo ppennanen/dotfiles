@@ -46,10 +46,15 @@ alias k=kubectl
 alias x=kubectx
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
+#============
+# COMPLETION
+#============
+
+complete -C /opt/homebrew/bin/terraform terraform
 
 #============
 # PROMPT
 #============
-
 #PS1='[\u@\h \W]\$ '
 eval "$(starship init bash)"
+

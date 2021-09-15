@@ -31,6 +31,9 @@ export PATH=$PATH:$HOME/bin:/:$HOME/.cargo/bin:/usr/local/bin:/usr/local/sbin:$H
 export LPASS_AGENT_TIMEOUT=60
 export RIPGREP_CONFIG_PATH=~/.ripgreprc
 export GPG_TTY=$(tty)
+#export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+#gpg-connect-agent updatestartuptty /bye > /dev/null
+#gpgconf --launch gpg-agent
 
 # libpq is keg-only, which means it was not symlinked into /opt/homebrew,
 # because conflicts with postgres formula.
@@ -69,10 +72,13 @@ if [ -f '/Users/ppennanen/bin/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/p
 # COMPLETION
 #============
 
+autoload -U +X bashcompinit && bashcompinit
+
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/ppennanen/bin/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ppennanen/bin/google-cloud-sdk/completion.zsh.inc'; fi
-
 kubectl completion zsh > "${fpath[1]}/_kubectl"
+. <(voictl completion zsh)
+complete -o nospace -C /opt/homebrew/bin/terraform terraform
 
 #============
 # PROMPT
