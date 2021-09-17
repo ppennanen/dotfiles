@@ -66,7 +66,7 @@ alias docker=docker --platform linux/amd64
 #============
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/ppennanen/bin/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ppennanen/bin/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc' ]; then . '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'; fi
 
 #============
 # COMPLETION
