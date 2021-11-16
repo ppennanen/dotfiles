@@ -58,3 +58,4 @@ complete -C /opt/homebrew/bin/terraform terraform
 #PS1='[\u@\h \W]\$ '
 eval "$(starship init bash)"
 
+. "$HOME/.cargo/env"
