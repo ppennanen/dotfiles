@@ -76,9 +76,8 @@ autoload -U +X bashcompinit && bashcompinit
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/ppennanen/bin/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ppennanen/bin/google-cloud-sdk/completion.zsh.inc'; fi
-kubectl completion zsh > "${fpath[1]}/_kubectl"
-. <(voictl completion zsh)
-complete -o nospace -C /opt/homebrew/bin/terraform terraform
+#kubectl completion zsh > "${fpath[1]}/_kubectl"
+#complete -o nospace -C /opt/homebrew/bin/terraform terraform
 
 #============
 # PROMPT
