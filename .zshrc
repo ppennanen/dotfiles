@@ -31,9 +31,6 @@ export PATH=$PATH:$HOME/bin:/:$HOME/.cargo/bin:/usr/local/bin:/usr/local/sbin:$H
 export LPASS_AGENT_TIMEOUT=60
 export RIPGREP_CONFIG_PATH=~/.ripgreprc
 export GPG_TTY=$(tty)
-#export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-#gpg-connect-agent updatestartuptty /bye > /dev/null
-#gpgconf --launch gpg-agent
 
 # libpq is keg-only, which means it was not symlinked into /opt/homebrew,
 # because conflicts with postgres formula.
@@ -41,12 +38,16 @@ export GPG_TTY=$(tty)
 # Add libpq to PATH:
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 
-# For compilers to find libpq you may need to set:
-export LDFLAGS="-L/opt/homebrew/opt/libpq/lib"
-export CPPFLAGS="-I/opt/homebrew/opt/libpq/include"
+# For compilers to work with some homebrew packages:
+export LDFLAGS="$LDFLAGS -L/opt/homebrew/opt/libpq/lib"
+export LDFLAGS="$LDFLAGS -L/opt/homebrew/opt/openssl@3/lib"
+export CPPFLAGS="$CPPFLAGS -I/opt/homebrew/opt/libpq/include"
+export CPPFLAGS="$CPPFLAGS -I/opt/homebrew/opt/openssl@3/include"
 
 # For pkg-config to find libpq you may need to set:
-export PKG_CONFIG_PATH="/opt/homebrew/opt/libpq/lib/pkgconfig"
+export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/opt/homebrew/opt/libpq/lib/pkgconfig"
+export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/opt/homebrew/opt/openssl@3/lib/pkgconfig"
+
 
 #============
 # ALIAS
