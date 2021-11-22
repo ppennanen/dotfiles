@@ -74,15 +74,26 @@ if [ -f '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zs
 #============
 
 autoload -U +X bashcompinit && bashcompinit
+autoload -Uz compinit && compinit
+mkdir -p ~/.zfunc 
 
-# The next line enables shell command completion for gcloud.
+# Command completion for gcloud.
 if [ -f '/Users/ppennanen/bin/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ppennanen/bin/google-cloud-sdk/completion.zsh.inc'; fi
-#kubectl completion zsh > "${fpath[1]}/_kubectl"
-#complete -o nospace -C /opt/homebrew/bin/terraform terraform
+
+# Command completion for aws-cli
+if [ -x "$(command -v aws_completer)" ]; then complete -C 'aws_completer' aws; fi
+
+# Command completion for poetry
+if [ -x "$(command -v poetry)" ]; then poetry completions zsh > ~/.zfunc/_poetry; fi
+
+# Command completion for kubectl
+if [ -x "$(command -v kubectl)" ]; then kubectl completion zsh > ~/.zfunc/_kubectl; fi
+
+# Command completion for terraform
+if [ -x "$(command -v terraform)" ]; then complete -o nospace -C terraform terraform > ~/.zfunc/_terraform; fi
 
 #============
 # PROMPT
 #============
-
 eval "$(starship init zsh)"
 
