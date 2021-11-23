@@ -31,6 +31,8 @@ export PATH=$PATH:$HOME/bin:/:$HOME/.cargo/bin:/usr/local/bin:/usr/local/sbin:$H
 export LPASS_AGENT_TIMEOUT=60
 export RIPGREP_CONFIG_PATH=~/.ripgreprc
 export GPG_TTY=$(tty)
+export NVM_DIR="$HOME/.nvm"
+
 
 # libpq is keg-only, which means it was not symlinked into /opt/homebrew,
 # because conflicts with postgres formula.
@@ -92,8 +94,14 @@ if [ -x "$(command -v kubectl)" ]; then kubectl completion zsh > ~/.zfunc/_kubec
 # Command completion for terraform
 if [ -x "$(command -v terraform)" ]; then complete -o nospace -C terraform terraform > ~/.zfunc/_terraform; fi
 
+# Load nvm
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh"
+
+# Command completion for nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && . "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
+
 #============
 # PROMPT
 #============
 eval "$(starship init zsh)"
-
+ 
