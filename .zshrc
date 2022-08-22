@@ -80,7 +80,7 @@ autoload -Uz compinit && compinit
 mkdir -p ~/.zfunc 
 
 # Command completion for gcloud.
-if [ -f '/Users/ppennanen/bin/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ppennanen/bin/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '/Users/${USER}/bin/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/${$USER}/bin/google-cloud-sdk/completion.zsh.inc'; fi
 
 # Command completion for aws-cli
 if [ -x "$(command -v aws_completer)" ]; then complete -C 'aws_completer' aws; fi
@@ -103,5 +103,4 @@ if [ -x "$(command -v terraform)" ]; then complete -o nospace -C terraform terra
 #============
 # PROMPT
 #============
-eval "$(starship init zsh)"
- 
+if [ -x "$(command -v starship)" ]; then eval "$(starship init zsh)"; fi
