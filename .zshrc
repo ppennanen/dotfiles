@@ -27,10 +27,9 @@ export NVIM_LISTEN_ADDRESS=/tmp/nvimsocket
 export EDITOR=nvim
 export GOPATH=$HOME/
 export GOPROXY=https://proxy.golang.org
-export PATH=$PATH:$HOME/bin:/:$HOME/.cargo/bin:/usr/local/bin:/usr/local/sbin:$HOME/.npm-global/bin
+export PATH=$HOME/bin:/:$HOME/.cargo/bin:/usr/local/bin:/usr/local/sbin:$HOME/.npm-global/bin:$PATH
 export LPASS_AGENT_TIMEOUT=60
 export RIPGREP_CONFIG_PATH=~/.ripgreprc
-export GPG_TTY=$(tty)
 export NVM_DIR="$HOME/.nvm"
 
 
@@ -61,7 +60,7 @@ alias vim="nvim"
 alias vi="nvim"
 alias k=kubectl
 alias x=kubectx
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias dotfiles='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias docker=docker --platform linux/amd64
 
 #============
@@ -104,3 +103,4 @@ if [ -x "$(command -v terraform)" ]; then complete -o nospace -C terraform terra
 # PROMPT
 #============
 if [ -x "$(command -v starship)" ]; then eval "$(starship init zsh)"; fi
+
