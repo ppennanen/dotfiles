@@ -33,6 +33,7 @@ export PATH=$HOME/bin:/:$HOME/.cargo/bin:/usr/local/bin:/usr/local/sbin:$HOME/.n
 export LPASS_AGENT_TIMEOUT=60
 export RIPGREP_CONFIG_PATH=~/.ripgreprc
 export NVM_DIR="$HOME/.nvm"
+export DOCKER_BUILDKIT=1
 
 
 # libpq is keg-only, which means it was not symlinked into /opt/homebrew,
