@@ -34,11 +34,10 @@ export LPASS_AGENT_TIMEOUT=60
 export RIPGREP_CONFIG_PATH=~/.ripgreprc
 export NVM_DIR="$HOME/.nvm"
 export DOCKER_BUILDKIT=1
+export POETRY_CONFIG_DIR=$HOME/.config/pypoetry
+export POETRY_DATA_DIR=$HOME/.local/share/pypoetry
+export POETRY_CACHE_DIR=$HOME/.cache/pypoetry
 
-
-# libpq is keg-only, which means it was not symlinked into /opt/homebrew,
-# because conflicts with postgres formula.
-#
 # Add libpq to PATH:
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 
@@ -51,6 +50,10 @@ export CPPFLAGS="$CPPFLAGS -I/opt/homebrew/opt/openssl@3/include"
 # For pkg-config to find libpq you may need to set:
 export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/opt/homebrew/opt/libpq/lib/pkgconfig"
 export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/opt/homebrew/opt/openssl@3/lib/pkgconfig"
+
+# Fix libkafkard location
+export C_INCLUDE_PATH="$C_INCLUDE_PATH:/opt/homebrew/Cellar/librdkafka/1.9.2/include"
+export LIBRARY_PATH="$LIBRARY_PATH:/opt/homebrew/Cellar/librdkafka/1.9.2/lib"
 
 
 #============
