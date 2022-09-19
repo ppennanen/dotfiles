@@ -38,22 +38,35 @@ export POETRY_CONFIG_DIR=$HOME/.config/pypoetry
 export POETRY_DATA_DIR=$HOME/.local/share/pypoetry
 export POETRY_CACHE_DIR=$HOME/.cache/pypoetry
 
-# Add libpq to PATH:
-export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 
-# For compilers to work with some homebrew packages:
-export LDFLAGS="$LDFLAGS -L/opt/homebrew/opt/libpq/lib"
-export LDFLAGS="$LDFLAGS -L/opt/homebrew/opt/openssl@3/lib"
-export CPPFLAGS="$CPPFLAGS -I/opt/homebrew/opt/libpq/include"
-export CPPFLAGS="$CPPFLAGS -I/opt/homebrew/opt/openssl@3/include"
+if [ $(arch) = "arm64" ]; then 
+  export PATH="/opt/homebrew/bin:$PATH" ; 
+  export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 
-# For pkg-config to find libpq you may need to set:
-export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/opt/homebrew/opt/libpq/lib/pkgconfig"
-export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/opt/homebrew/opt/openssl@3/lib/pkgconfig"
+  export LD_FALLBACK_LIBRARY_PATH="/opt/homebrew/lib:$LD_LIBRARY_PATH"; 
 
-# Fix libkafkard location
-export C_INCLUDE_PATH="$C_INCLUDE_PATH:/opt/homebrew/Cellar/librdkafka/1.9.2/include"
-export LIBRARY_PATH="$LIBRARY_PATH:/opt/homebrew/Cellar/librdkafka/1.9.2/lib"
+  export CFLAGS="-I/opt/homebrew/include $CFLAGS"; 
+  export CFLAGS="-I/opt/homebrew/opt/zlib/include $CFLAGS"; 
+ 
+  export C_INCLUDE_PATH="$C_INCLUDE_PATH:/opt/homebrew/Cellar/librdkafka/1.9.2/include"; 
+
+  export CPPFLAGS="-I/opt/homebrew/include $CPPFLAGS"; 
+  export CPPFLAGS="$CPPFLAGS -I/opt/homebrew/opt/libpq/include"; 
+  export CPPFLAGS="$CPPFLAGS -I/opt/homebrew/opt/openssl@3/include"; 
+  export CPPFLAGS="$CPPFLAGS -I/opt/homebrew/opt/openssl/include"; 
+  export CPPFLAGS="$CPPFLAGS -I/opt/homebrew/opt/zlib/include"; 
+
+  export DYLD_FALLBACK_LIBRARY_PATH="/opt/homebrew/lib:$DYLD_FALLBACK_LIBRARY_PATH"
+  export LDFLAGS="-L/opt/homebrew/lib $LDFLAGS"; 
+  export LDFLAGS="-L/opt/homebrew/opt/openssl@3/lib/ $LDFLAGS"; 
+  export LDFLAGS="-L/opt/homebrew/opt/openssl/lib/ $LDFLAGS"; 
+  export LDFLAGS="-L/opt/homebrew/opt/zlib/lib $LDFLAGS"; 
+
+  export LIBRARY_PATH="$LIBRARY_PATH:/opt/homebrew/Cellar/librdkafka/1.9.2/lib"; 
+
+  export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/opt/homebrew/opt/libpq/lib/pkgconfig"; 
+  export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/opt/homebrew/opt/openssl@3/lib/pkgconfig"; 
+fi
 
 
 #============
@@ -68,6 +81,7 @@ alias k=kubectl
 alias x=kubectx
 alias dotfiles='git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias docker=docker --platform linux/amd64
+if [ $(arch) = "arm64" ]; then alias brew="/opt/homebrew/bin/brew"; fi
 
 #============
 # PATH
