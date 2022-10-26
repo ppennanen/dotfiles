@@ -34,6 +34,7 @@ export LPASS_AGENT_TIMEOUT=60
 export RIPGREP_CONFIG_PATH=~/.ripgreprc
 export NVM_DIR="$HOME/.nvm"
 export DOCKER_BUILDKIT=1
+export DOCKER_DEFAULT_PLATFORM=linux/amd64
 export POETRY_CONFIG_DIR=$HOME/.config/pypoetry
 export POETRY_DATA_DIR=$HOME/.local/share/pypoetry
 export POETRY_CACHE_DIR=$HOME/.cache/pypoetry
