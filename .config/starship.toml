@@ -4,6 +4,12 @@
 # Inserts a blank line between shell prompts
 add_newline = true
 
+[kubernetes]
+format = 'on [⛵ $context](dimmed green) '
+disabled = false
+
 [python]
-disabled = true
+python_binary = ["./venv/bin/python", "python", "python3", "python2"]
+pyenv_prefix = ""
+#pyenv_version_name = true
 
