@@ -13,3 +13,7 @@ python_binary = ["./venv/bin/python", "python", "python3", "python2"]
 pyenv_prefix = ""
 #pyenv_version_name = true
 
+[time]
+disabled = false
+
+
