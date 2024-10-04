@@ -23,5 +23,8 @@
     "Python": {
       "language_servers": ["pyright", "ruff"]
     }
+  },
+  "terminal": {
+    "option_as_meta": false
   }
 }
