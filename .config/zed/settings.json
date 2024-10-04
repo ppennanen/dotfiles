@@ -18,5 +18,10 @@
   "autosave": "on_focus_change",
   "tab_bar": {
     "show": false
+  },
+  "languages": {
+    "Python": {
+      "language_servers": ["pyright", "ruff"]
+    }
   }
 }

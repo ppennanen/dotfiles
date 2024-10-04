@@ -29,7 +29,7 @@ export NVIM_LISTEN_ADDRESS=/tmp/nvimsocket
 export EDITOR=nvim
 export GOPATH=$HOME/
 export GOPROXY=https://proxy.golang.org
-export PATH=$HOME/bin:/:$HOME/.cargo/bin:/usr/local/bin:/usr/local/sbin:$HOME/.npm-global/bin:$PATH
+export PATH=$HOME/bin:$HOME/.local/bin:$HOME/.cargo/bin:/usr/local/bin:/usr/local/sbin:$HOME/.npm-global/bin:$PATH
 export LPASS_AGENT_TIMEOUT=60
 export RIPGREP_CONFIG_PATH=~/.ripgreprc
 export NVM_DIR="$HOME/.nvm"
@@ -38,9 +38,10 @@ export DOCKER_DEFAULT_PLATFORM=linux/amd64
 export POETRY_CONFIG_DIR=$HOME/.config/pypoetry
 export POETRY_DATA_DIR=$HOME/.local/share/pypoetry
 export POETRY_CACHE_DIR=$HOME/.cache/pypoetry
-
+export HELM_EXPERIMENTAL_OCI=1
 
 if [ $(arch) = "arm64" ]; then 
+  export XDG_CONFIG_HOME="$HOME/Library/Application Support"
   export PATH="/opt/homebrew/bin:$PATH" ; 
   export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 
@@ -67,6 +68,9 @@ if [ $(arch) = "arm64" ]; then
 
   export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/opt/homebrew/opt/libpq/lib/pkgconfig"; 
   export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/opt/homebrew/opt/openssl@3/lib/pkgconfig"; 
+
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 fi
 
 
@@ -90,6 +94,7 @@ if [ $(arch) = "arm64" ]; then alias brew="/opt/homebrew/bin/brew"; fi
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc' ]; then . '/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'; fi
+export PATH="$PATH:/Users/petri.pennanen/.dotnet/tools"
 
 #============
 # COMPLETION
