@@ -1,0 +1,15 @@
+[core]
+	excludesFile = ~/.gitignore
+
+[gpg]
+	format = ssh
+
+[includeIf "gitdir:~/src/github"]
+	path = "~/.gitconfig-work"
+
+[includeIf "gitdir:~/src/github/ppennanen"]
+	path = "~/.gitconfig-private"
+
+[includeIf "gitdir:~/.local"]
+	path = "~/.gitconfig-private"
+

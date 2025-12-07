@@ -1,6 +1,0 @@
-ffind
-neovim
-poetry
-ripgrep
-starship
-uv

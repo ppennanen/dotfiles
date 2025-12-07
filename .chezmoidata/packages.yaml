@@ -1,0 +1,13 @@
+packages:
+  darwin:
+    brews:
+    - 'ffind'
+    - 'go'
+    - 'neovim'
+    - 'poetry'
+    - 'ripgrep'
+    - 'starship'
+    - 'uv'
+    casks:
+    - 'font-jetbrains-mono-nerd-font'
+

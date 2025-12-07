@@ -22,16 +22,6 @@ Install homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-Install tools
-
-```sh
-xargs brew install < .config/brew-leaves.txt
-```
-
-Update list of current tools
-
-```
-brew leaves > .config/brew-leaves.txt 
-chezmoi add  .config/brew-leaves.txt
-```
+Tools are listed in `~/.local/share/chezmoi/.chezmoidata/packages.yaml`.
+Install with `chezmoi apply`.
 
