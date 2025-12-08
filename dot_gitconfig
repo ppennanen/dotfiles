@@ -13,3 +13,5 @@
 [includeIf "gitdir:~/.local/"]
 	path = "~/.gitconfig-private"
 
+[push]
+	autoSetupRemote = true
