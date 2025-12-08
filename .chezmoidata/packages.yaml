@@ -7,6 +7,7 @@ packages:
     - 'poetry'
     - 'pre-commit'
     - 'ripgrep'
+    - 'ruff'
     - 'starship'
     - 'uv'
     casks:
