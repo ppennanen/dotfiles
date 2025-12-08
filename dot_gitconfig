@@ -4,12 +4,12 @@
 [gpg]
 	format = ssh
 
-[includeIf "gitdir:~/src/github"]
+[includeIf "gitdir:~/src/github/"]
 	path = "~/.gitconfig-work"
 
-[includeIf "gitdir:~/src/github/ppennanen"]
+[includeIf "gitdir:~/src/github/ppennanen/"]
 	path = "~/.gitconfig-private"
 
-[includeIf "gitdir:~/.local"]
+[includeIf "gitdir:~/.local/"]
 	path = "~/.gitconfig-private"
 
