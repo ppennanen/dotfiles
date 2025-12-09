@@ -4,7 +4,6 @@ packages:
     - 'ffind'
     - 'go'
     - 'neovim'
-    - 'podman'
     - 'poetry'
     - 'pre-commit'
     - 'ripgrep'
@@ -13,5 +12,4 @@ packages:
     - 'uv'
     casks:
     - 'font-jetbrains-mono-nerd-font'
-    - 'podman-desktop'
 
