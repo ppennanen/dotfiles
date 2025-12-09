@@ -17,5 +17,6 @@
 	autoSetupRemote = true
 
 [alias]
-	rbtop = rebase -i HEAD~2
+	rb2 = rebase -i HEAD~2
+	fresh = "!git fetch origin main:main && git rebase main"
 
