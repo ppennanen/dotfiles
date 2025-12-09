@@ -4,6 +4,7 @@ packages:
     - 'ffind'
     - 'go'
     - 'neovim'
+    - 'podman'
     - 'poetry'
     - 'pre-commit'
     - 'ripgrep'
