@@ -7,7 +7,6 @@ packages:
     - 'neovim'
     - 'poetry'
     - 'postgresql'
-    - 'postman'
     - 'pre-commit'
     - 'ripgrep'
     - 'ruff'
@@ -15,4 +14,5 @@ packages:
     - 'uv'
     casks:
     - 'font-jetbrains-mono-nerd-font'
+    - 'postman'
 
