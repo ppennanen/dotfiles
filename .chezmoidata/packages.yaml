@@ -9,8 +9,9 @@ packages:
     - 'postgresql'
     - 'pre-commit'
     - 'ripgrep'
-    - 'ruff'
+    - 'semgrep'
     - 'starship'
+    - 'trivy'
     - 'uv'
     casks:
     - 'font-jetbrains-mono-nerd-font'
