@@ -5,6 +5,7 @@ packages:
     - 'go'
     - 'neovim'
     - 'poetry'
+    - 'postgresql'
     - 'pre-commit'
     - 'ripgrep'
     - 'ruff'
