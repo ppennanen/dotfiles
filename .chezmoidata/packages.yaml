@@ -12,5 +12,4 @@ packages:
     - 'uv'
     casks:
     - 'font-jetbrains-mono-nerd-font'
-    - 'podman-desktop'
 
