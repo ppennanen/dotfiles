@@ -7,6 +7,7 @@ packages:
     - 'neovim'
     - 'poetry'
     - 'postgresql'
+    - 'postman'
     - 'pre-commit'
     - 'ripgrep'
     - 'ruff'
