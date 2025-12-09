@@ -3,6 +3,7 @@ packages:
     brews:
     - 'ffind'
     - 'go'
+    - 'libpq'
     - 'neovim'
     - 'poetry'
     - 'postgresql'
