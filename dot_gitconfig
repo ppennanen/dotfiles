@@ -19,4 +19,10 @@
 [alias]
 	rb2 = rebase -i HEAD~2
 	fresh = "!git fetch origin main:main && git rebase main"
+	dlog = -c diff.external=difft log --ext-diff
+	dshow = -c diff.external=difft show --ext-diff
+	ddiff = -c diff.external=difft diff
+
+[diff]
+    external = difft
 
