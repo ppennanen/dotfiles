@@ -6,6 +6,7 @@ packages:
     - 'go'
     - 'libpq'
     - 'neovim'
+    - 'nvm'
     - 'poetry'
     - 'postgresql'
     - 'pre-commit'
