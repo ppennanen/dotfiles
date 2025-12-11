@@ -17,6 +17,7 @@
 	autoSetupRemote = true
 
 [alias]
+	tree = log --oneline --decorate --graph --all
 	rb2 = rebase -i HEAD~2
 	fresh = "!git fetch origin main:main && git rebase main"
 	dlog = -c diff.external=difft log --ext-diff
