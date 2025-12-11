@@ -1,7 +1,8 @@
 packages:
   darwin:
     brews:
-    - 'difftastic'
+    - 'claude'
+    - 'claude-code'
     - 'ffind'
     - 'go'
     - 'libpq'
