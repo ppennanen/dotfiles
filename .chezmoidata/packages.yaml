@@ -19,5 +19,6 @@ packages:
     casks:
     - 'claude-code'
     - 'font-jetbrains-mono-nerd-font'
+    - 'font-monaspace-nf'
     - 'postman'
 
