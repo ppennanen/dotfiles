@@ -27,3 +27,6 @@
 [diff]
     external = difft
 
+[gpg]
+        format = ssh
+
