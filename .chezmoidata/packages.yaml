@@ -16,6 +16,7 @@ packages:
     - 'uv'
     - 'watchexec'
     casks:
+    - 'bruno'
     - 'claude-code'
     - 'font-jetbrains-mono-nerd-font'
     - 'font-monaspace-nf'
