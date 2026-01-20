@@ -1,6 +1,7 @@
 packages:
   darwin:
     brews:
+    - 'bruno-cli'
     - 'ffind'
     - 'go'
     - 'libpq'
