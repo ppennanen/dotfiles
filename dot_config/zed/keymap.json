@@ -10,5 +10,13 @@
         }
       ]
     }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-a": ["terminal::SendKeystroke", "ctrl-a"],
+      "ctrl-e": ["terminal::SendKeystroke", "ctrl-e"],
+      "ctrl-r": ["terminal::SendKeystroke", "ctrl-r"],
+    }
   }
 ]
