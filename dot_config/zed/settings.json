@@ -7,8 +7,17 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "features": {
-    "edit_prediction_provider": "none",
+  "agent": {
+    "default_model": {
+      "provider": "anthropic",
+      "model": "claude-opus-4-6-latest",
+      "enable_thinking": false
+    },
+    "favorite_models": [],
+    "model_parameters": []
+  },
+  "edit_predictions": {
+    "provider": "none"
   },
   "base_keymap": "JetBrains",
   "theme": "One Light",
