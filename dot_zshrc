@@ -33,12 +33,7 @@ export GOPROXY=https://proxy.golang.org
 export PATH=$HOME/bin:$HOME/.local/bin:$HOME/.cargo/bin:/usr/local/bin:/usr/local/sbin:$HOME/.npm-global/bin:$PATH
 export RIPGREP_CONFIG_PATH=~/.ripgreprc
 export NVM_DIR="$HOME/.nvm"
-export DOCKER_BUILDKIT=1
-export DOCKER_DEFAULT_PLATFORM=linux/amd64
-export POETRY_CONFIG_DIR=$HOME/.config/pypoetry
-export POETRY_DATA_DIR=$HOME/.local/share/pypoetry
-export POETRY_CACHE_DIR=$HOME/.cache/pypoetry
-export HELM_EXPERIMENTAL_OCI=1
+export PYTHONDONTWRITEBYTECODE=1
 
 #============
 # ALIAS
@@ -50,7 +45,6 @@ alias vim="nvim"
 alias vi="nvim"
 alias k=kubectl
 alias x=kubectx
-alias docker=docker --platform linux/amd64
 
 #============
 # PATH
