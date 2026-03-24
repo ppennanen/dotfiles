@@ -16,6 +16,7 @@ packages:
     - 'trivy'
     - 'uv'
     - 'watchexec'
+    - 'zizmor'
     casks:
     - 'bruno'
     - 'claude-code'
