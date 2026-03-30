@@ -7,7 +7,6 @@ packages:
     - 'libpq'
     - 'neovim'
     - 'nvm'
-    - 'poetry'
     - 'postgresql'
     - 'pre-commit'
     - 'ripgrep'
