@@ -1,3 +1,4 @@
+zmodload zsh/zprof
 #============
 # History
 # ===========
@@ -69,9 +70,6 @@ if [ -f '/Users/${USER}/bin/google-cloud-sdk/completion.zsh.inc' ]; then . '/Use
 # Command completion for aws-cli
 if [ -x "$(command -v aws_completer)" ]; then complete -C 'aws_completer' aws; fi
 
-# Command completion for poetry
-if [ -x "$(command -v poetry)" ]; then poetry completions zsh > ~/.zfunc/_poetry; fi
-
 # Command completion for kubectl
 if [ -x "$(command -v kubectl)" ]; then kubectl completion zsh > ~/.zfunc/_kubectl; fi
 
@@ -79,15 +77,17 @@ if [ -x "$(command -v kubectl)" ]; then kubectl completion zsh > ~/.zfunc/_kubec
 if [ -x "$(command -v terraform)" ]; then complete -o nospace -C terraform terraform > ~/.zfunc/_terraform; fi
 
 # Command completion for nvm
-[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completioin
+nvm() { unset -f nvm; [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/opt/nvm/nvm.sh";
+  nvm "$@"; }
 
 # uv
-eval "$(uv generate-shell-completion zsh)"
-eval "$(uvx --generate-shell-completion zsh)"
+if [[! -a ~/.zfunc/_uv]]  uv generate-shell-completion zsh > ~/.zfunc/_uv; fi
+if [[! -a ~/.zfunc/_uvx]]  uvx generate-shell-completion zsh > ~/.zfunc/_uvx; fi
+fpath+=~/.zfunc
 
 #============
 # PROMPT
 #============
 if [ -x "$(command -v starship)" ]; then eval "$(starship init zsh)"; fi
 
+zprof
