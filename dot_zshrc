@@ -81,8 +81,8 @@ nvm() { unset -f nvm; [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && . "/opt/homebrew/
   nvm "$@"; }
 
 # uv
-if [[! -a ~/.zfunc/_uv]]  uv generate-shell-completion zsh > ~/.zfunc/_uv; fi
-if [[! -a ~/.zfunc/_uvx]]  uvx generate-shell-completion zsh > ~/.zfunc/_uvx; fi
+if [[ ! -a ~/.zfunc/_uv ]]; then uv generate-shell-completion zsh > ~/.zfunc/_uv; fi
+if [[ ! -a ~/.zfunc/_uvx ]]; then uvx --generate-shell-completion zsh > ~/.zfunc/_uvx; fi
 fpath+=~/.zfunc
 
 #============
