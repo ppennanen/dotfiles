@@ -1,8 +1,7 @@
 [core]
 	excludesFile = ~/.gitignore
-
-[gpg]
-	format = ssh
+[commit]
+	gpgSign = true
 
 [includeIf "gitdir:~/src/github/"]
 	path = "~/.gitconfig-work"
