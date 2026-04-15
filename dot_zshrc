@@ -1,4 +1,6 @@
-zmodload zsh/zprof
+# Profile zshrc
+#zmodload zsh/zprof
+
 #============
 # History
 # ===========
@@ -90,4 +92,5 @@ fpath+=~/.zfunc
 #============
 if [ -x "$(command -v starship)" ]; then eval "$(starship init zsh)"; fi
 
-zprof
+# End profile zshrc
+#zprof
